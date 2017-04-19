@@ -6,6 +6,8 @@
   font-family: 'Roboto', sans-serif;
   justify-content: flex-start;
   margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   max-width: 60rem;
   padding: 1rem;
 }
@@ -22,6 +24,7 @@
   flex-direction: column;
   margin: 1rem;
   padding-top: 1rem;
+  text-align: center;
 }
 
 .image-caption {
@@ -34,4 +37,8 @@
   font-style: italic;
   font-size: 0.9rem;
   padding: 1rem;
+}
+
+.link-div {
+  margin-top: 1rem;
 }
