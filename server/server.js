@@ -5,6 +5,7 @@ const app = express();
 const quotes = require('./quotes.json');
 
 app.use('/frontend/tribute-page', express.static(__dirname + '/../frontend/tribute-page/dist'))
+app.use('/frontend/random-quote-machine', express.static(__dirname + '/../frontend/random-quote-machine/dist'))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
