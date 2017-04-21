@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="quote-container" (click)="getQuote($event)">
+    <div class="controls">
+      <button id="tweet-button"><img src="/assets/twitter-128.png" alt="tweet" title="Tweet"></button>
+    </div>
+    <p id="quote">{{ quote }}</p>
+    <br><br>
+    <p id="author">{{ author }}</p>
+  </div>
+</div>

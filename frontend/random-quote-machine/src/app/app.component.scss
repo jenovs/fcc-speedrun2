@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.controls,
+.quote-container {
+  max-width: 50rem;
+  width: 100%;
+}
+
+.controls {
+  text-align: right;
+  padding-bottom: 1rem;
+
+  & button {
+    border: none;
+    background-color: inherit;
+    outline: none;
+  }
+
+  & img {
+    transition: transform 0.3s;
+    width: 1.5rem;
+
+    &:hover {
+      transform: scale(2);
+    }
+  }
+}
+
+.quote-container {
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  min-height: 20rem;
+  padding: 1rem 2rem;
+}
+
+#author {
+  font-size: 1rem;
+  font-style: italic;
+  text-align: right;
+}
