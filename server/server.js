@@ -14,6 +14,11 @@ app.get('/wip/tribute-page', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/tribute-page/dist/index.html'));
 });
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.get('/api/quote', (req, res) => {
   const rnd = Math.floor(Math.random() * quotes.length);
   res.send(quotes[rnd]);
