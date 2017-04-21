@@ -2,7 +2,9 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-app.use('../frontend/tribute-page', express.static(__dirname + '../frontend/tribute-page/dist'))
+const quotes = require('./quotes.json');
+
+app.use('/frontend/tribute-page', express.static(__dirname + '/../frontend/tribute-page/dist'))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -13,7 +15,8 @@ app.get('/wip/tribute-page', (req, res) => {
 });
 
 app.get('/api/quote', (req, res) => {
-  res.send({quote: 'random quote'});
+  const rnd = Math.floor(Math.random() * quotes.length);
+  res.send(quotes[rnd]);
 });
 
 app.listen(3014);
