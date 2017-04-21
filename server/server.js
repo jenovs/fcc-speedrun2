@@ -14,6 +14,10 @@ app.get('/wip/tribute-page', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/tribute-page/dist/index.html'));
 });
 
+app.get('/wip/random-quote-machine', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../frontend/random-quote-machine/dist/index.html'));
+});
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
