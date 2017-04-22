@@ -50,9 +50,10 @@ export class AppComponent {
     .subscribe(
       res => {
       const weather = res.json().weather;
+      weather.icon_url = weather.icon_url.replace('http', 'https')
       this.weatherData = weather;
       if (weather.display_location.country === 'US') this.tempIsC = false;
-      console.log(this.weatherData)
+      console.log(weather)
     },
       err => {
         console.log('Error. Will retry')
