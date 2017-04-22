@@ -1,0 +1,44 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  cursor: default;
+  font: 16px/1 sans-serif;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+app-root {
+  background-color: #ffe;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+p,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

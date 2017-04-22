@@ -1,0 +1,20 @@
+.weather {
+  cursor: pointer;
+  flex: 1;
+  line-height: 5rem;
+  margin-top: 10%;
+  text-align: center;
+
+  & p {
+    font-size: 3rem;
+  }
+}
+
+.temperature {
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}

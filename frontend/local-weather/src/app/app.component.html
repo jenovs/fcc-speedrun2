@@ -1,0 +1,16 @@
+<div class="weather" (click)="toggleTemp()" *ngIf="weatherData">
+  <p>{{ weatherData.display_location.full }}</p>
+  <p class="temperature">
+    {{ tempIsC ? weatherData.temp_c : weatherData.temp_f }} &deg;{{ tempIsC ? 'C' : 'F'}}
+  </p>
+  <p>{{ weatherData.weather }}</p>
+  <img [src]="weatherData.icon_url" [alt]="weatherData.icon">
+</div>
+<div class="weather" *ngIf="!weatherData">Loading...</div>
+
+<footer>
+  <a href="//www.wunderground.com" target="_blank">
+    Powered by Weather Underground<br/>
+    <img width="200px" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_horz.png"/>
+  </a>
+</footer>
