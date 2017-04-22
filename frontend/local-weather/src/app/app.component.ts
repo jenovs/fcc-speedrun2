@@ -56,7 +56,7 @@ export class AppComponent {
     },
       err => {
         console.log('Error. Will retry')
-        setTimeout(this.fetchWeather, 5000);
+        setTimeout(this.fetchWeather(lat, lon), 5000);
     })
   }
 
