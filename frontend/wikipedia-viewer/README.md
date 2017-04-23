@@ -14,6 +14,4 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 
 **Hint #2:** Here's an entry on using Wikipedia's API: https://www.mediawiki.org/wiki/API:Main_page.
 
-**Hint #3:** Use this link to experiment with Wikipedia's API.
-
 ## Notes

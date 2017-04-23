@@ -1,0 +1,17 @@
+<h1>
+  {{title}}
+</h1>
+<form (ngSubmit)="handleSearch(term)">
+  <label for="maxResults">Max results</label>
+  <input type="number" max="500" size="5" [(ngModel)]="maxResults" required="true" name="maxResults">
+  <br>
+  <input type="text" [(ngModel)]="term" required name="term">
+  <button class="btn btn-primary" type="submit" >Search</button>
+</form>
+<div>
+  <app-item
+    *ngFor="let title of titles"
+    [title]="title"
+  >
+</app-item>
+</div>

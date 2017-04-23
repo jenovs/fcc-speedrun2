@@ -1,0 +1,19 @@
+p, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  cursor: pointer;
+  margin: 0.5rem;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.extract {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
