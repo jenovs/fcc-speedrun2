@@ -1,17 +1,23 @@
-<h1>
-  {{title}}
-</h1>
-<form (ngSubmit)="handleSearch(term)">
-  <label for="maxResults">Max results</label>
-  <input type="number" max="500" size="5" [(ngModel)]="maxResults" required="true" name="maxResults">
-  <br>
-  <input type="text" [(ngModel)]="term" required name="term">
-  <button class="btn btn-primary" type="submit" >Search</button>
-</form>
-<div>
+<div class="wiki">
+  <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank" title="Go to Wikipedia">
+    <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="Wikiedia">
+  </a>
+  <form (ngSubmit)="handleSearch()" ngNativeValidate>
+    <input type="text" [(ngModel)]="term" name="term" required autofocus>
+    <button class="btn-search" type="submit">Search</button>
+    <button class="btn-search" type="button" (click)="openRandom()">Random</button>
+    <div class="maxResults">
+      <label for="maxResults">Max results:</label>
+      <input type="number" min="1" max="500" [(ngModel)]="maxResults" required name="maxResults">
+    </div>
+  </form>
+</div>
+<div class="items">
   <app-item
     *ngFor="let title of titles"
     [title]="title"
   >
 </app-item>
+<div class="nothin-found" *ngIf="!firstRender && !titles.length">
+  <h4>Nothing found :(</h4>
 </div>

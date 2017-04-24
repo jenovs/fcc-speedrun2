@@ -8,9 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
   @Input() title;
-  extract = '';
-  showExtract = false;
-  firstShow = true;
+  extract: string = 'Loading...';
+  extractLength: number = 250;
 
   constructor(private http: Http) { }
 
@@ -22,8 +21,11 @@ export class ItemComponent implements OnInit {
     this.http.get(`https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&pageids=${id}&prop=extracts&explaintext=true`)
     .subscribe(res => {
       const json = res.json();
-      this.extract = json.query.pages[id].extract.substring(0, 150) + '...';
-      if (this.firstShow) this.showExtract = true;
+      this.extract = json.query.pages[id].extract.substring(0, this.extractLength) + '...';
     })
+  }
+
+  openItemPage(url) {
+    window.open(url);
   }
 }

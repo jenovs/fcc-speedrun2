@@ -4,18 +4,22 @@ import { Http } from '@angular/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  active;
-  extract;
   titles = [];
+  firstRender = true;
   term;
-  maxResults: string = "20";
+  maxResults: number = 10;
 
   constructor(private http: Http) {}
 
-  handleSearch(term) {
+  handleSearch() {
+    if (!this.term) return;
+
+    if (this.maxResults < 1) this.maxResults = 1;
+    if (this.maxResults > 500) this.maxResults = 500;
+
     this.titles = [];
     const baseUrl = 'https://en.wikipedia.org/w/api.php?'
     const params = {
@@ -23,7 +27,7 @@ export class AppComponent {
       generator: 'search',
       prop: 'info',
       inprop: 'url',
-      gsrsearch: `intitle:${term}`,
+      gsrsearch: `intitle:${this.term}`,
       gsrlimit: +this.maxResults,
       format: 'json',
       origin: '*'
@@ -40,11 +44,20 @@ export class AppComponent {
 
     this.http.get(makeUrl(baseUrl, params))
     .subscribe(res => {
+      this.term = '';
+      this.firstRender = false;
       const json = res.json();
+
+      if (!json.query) return;
+
       const pages = json.query.pages;
       for (let id in pages) {
         this.titles.push(pages[id]);
       }
     })
+
+  }
+  openRandom() {
+    window.open('https://en.wikipedia.org/wiki/Special:Random');
   }
 }

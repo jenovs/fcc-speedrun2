@@ -1,4 +1,4 @@
-<div class="item" title="Go to Wikipedia">
-  <h4>{{ title.title }}</h4>
+<div class="item" title="Go to Wikipedia Page" (click)="openItemPage(title.fullurl)">
+  <h4 class="item-title">{{ title.title }}</h4>
   <p>{{ extract }}</p>
 </div>
