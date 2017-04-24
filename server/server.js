@@ -7,6 +7,7 @@ const quotes = require('./quotes.json');
 app.use('/frontend/tribute-page', express.static(__dirname + '/../frontend/tribute-page/dist'))
 app.use('/frontend/random-quote-machine', express.static(__dirname + '/../frontend/random-quote-machine/dist'))
 app.use('/frontend/local-weather', express.static(__dirname + '/../frontend/local-weather/dist'))
+app.use('/frontend/wikipedia-viewer', express.static(__dirname + '/../frontend/wikipedia-viewer/dist'))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -22,6 +23,10 @@ app.get('/wip/random-quote-machine', (req, res) => {
 
 app.get('/wip/local-weather', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/local-weather/dist/index.html'));
+});
+
+app.get('/wip/wikipedia-viewer' (req, res) => {
+  res.sendFile(path.join(__dirname + '/../frontend/wikipedia-viewer/dist/index.html'));
 });
 
 app.use((req, res, next) => {
