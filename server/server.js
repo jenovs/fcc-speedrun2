@@ -25,7 +25,7 @@ app.get('/wip/local-weather', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/local-weather/dist/index.html'));
 });
 
-app.get('/wip/wikipedia-viewer' (req, res) => {
+app.get('/wip/wikipedia-viewer', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/wikipedia-viewer/dist/index.html'));
 });
 
