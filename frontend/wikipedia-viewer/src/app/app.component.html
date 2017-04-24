@@ -18,6 +18,6 @@
     [title]="title"
   >
 </app-item>
-<div class="nothin-found" *ngIf="!firstRender && !titles.length">
+<div class="nothin-found" *ngIf="showErrorMsg">
   <h4>Nothing found :(</h4>
 </div>

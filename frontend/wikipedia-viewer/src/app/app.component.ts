@@ -8,9 +8,9 @@ import { Http } from '@angular/http';
 })
 export class AppComponent {
   titles = [];
-  firstRender = true;
   term;
   maxResults: number = 10;
+  showErrorMsg = false;
 
   constructor(private http: Http) {}
 
@@ -45,10 +45,10 @@ export class AppComponent {
     this.http.get(makeUrl(baseUrl, params))
     .subscribe(res => {
       this.term = '';
-      this.firstRender = false;
+      this.showErrorMsg = false;
       const json = res.json();
 
-      if (!json.query) return;
+      if (!json.query) return this.showErrorMsg = true;
 
       const pages = json.query.pages;
       for (let id in pages) {
