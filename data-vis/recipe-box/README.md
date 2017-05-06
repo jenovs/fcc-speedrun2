@@ -17,5 +17,3 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 * User Story: I can delete these recipes.
 
 * User Story: All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
-
-## Notes
